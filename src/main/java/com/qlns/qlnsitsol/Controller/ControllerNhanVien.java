@@ -65,17 +65,4 @@ public class ControllerNhanVien {
         }
         return new  ResponseEntity(nv.stream().map(dto::toDTO).collect(Collectors.toList()), HttpStatus.OK);
     }
-    @GetMapping("/listLuong")
-    public ResponseEntity<Luong> listResponseEntity1(){
-//        List<NhanVien> nv = repo.getAllByChuVuLikeAndActionAndPhongBan_Action("giam đốc",true,true);
-//        NhanVienDTO dto = new NhanVienDTO();
-//        nv.stream().map(dto::toDTO).collect(Collectors.toList());
-//        if (nv.isEmpty()){
-//            return new  ResponseEntity(new Messager("Khong ton tai"), HttpStatus.NOT_FOUND);
-//        }
-//        List<DiemDanh> list = repositoryDiemDanh.getAllByDilamAndNhanVienIdAndDateLike(true,1,"%9/2020%");
-        Optional<Luong> luong = repositoryLuong.findByNhanVienIdAndThangAndNam(1,"2","2");
-        Optional<KhenThuongKl> kt = repositoryKhenThuong.findByLuongId(luong.get().getId());
-        return new  ResponseEntity(luong, HttpStatus.OK);
-    }
 }

@@ -19,10 +19,10 @@ public class KhenThuongKl {
     private String SoTien;
     @Column(name = "noidung")
     private String NoiDung;
-    @ManyToOne
-    @JoinColumn(name="luongid")
+    @OneToMany(mappedBy = "khenThuongKl", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @NotFound(action = NotFoundAction.IGNORE)
-    private Luong luong;
+    List<Luong> luongs;
+
     public KhenThuongKl() {
 
     }

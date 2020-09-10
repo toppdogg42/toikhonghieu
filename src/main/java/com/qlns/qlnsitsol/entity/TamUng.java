@@ -4,6 +4,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tamung")
@@ -17,10 +18,10 @@ public class TamUng {
     private String lyDo;
     @Column(name = "ngaytamung")
     private String ngayTamUng;
-    @ManyToOne
-    @JoinColumn(name="luongid")
+    @OneToMany(mappedBy = "tamUng", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @NotFound(action = NotFoundAction.IGNORE)
-    private Luong luong;
+    List<Luong> luongs;
+
 
     public TamUng() {
     }
@@ -46,7 +47,6 @@ public class TamUng {
     public void setTenTamung(String tenTamung) {
         this.tenTamung = tenTamung;
     }
-
     public String getLyDo() {
         return lyDo;
     }
@@ -63,11 +63,4 @@ public class TamUng {
         this.ngayTamUng = ngayTamUng;
     }
 
-    public Luong getLuong() {
-        return luong;
-    }
-
-    public void setLuong(Luong luong) {
-        this.luong = luong;
-    }
 }

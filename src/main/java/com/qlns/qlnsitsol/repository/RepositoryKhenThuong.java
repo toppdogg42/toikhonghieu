@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface RepositoryKhenThuong extends JpaRepository<KhenThuongKl,Long> {
 
-    Optional<KhenThuongKl> findByLuongId(long idl);
 }

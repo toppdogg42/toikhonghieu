@@ -9,9 +9,6 @@ import javax.persistence.*;
 @Table(name = "diemdanh")
 public class DiemDanh {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private  long id;
     private String date;
     private boolean dilam;
     @ManyToOne
@@ -19,25 +16,14 @@ public class DiemDanh {
     @NotFound(action = NotFoundAction.IGNORE)
     private NhanVien nhanVien;
 
-    public DiemDanh(long id, String date, boolean dilam, NhanVien nhanVien) {
-        this.id = id;
+    public DiemDanh( String date, boolean dilam, NhanVien nhanVien) {
         this.date = date;
         this.dilam = dilam;
         this.nhanVien = nhanVien;
     }
-
     public DiemDanh() {
 
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getDate() {
         return date;
     }

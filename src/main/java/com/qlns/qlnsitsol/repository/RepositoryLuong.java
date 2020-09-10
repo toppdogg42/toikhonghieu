@@ -7,6 +7,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RepositoryLuong extends JpaRepository<Luong,Long> {
-
-    Optional<Luong> findByNhanVienIdAndThangAndNam(long id, String thang, String nam);
 }
