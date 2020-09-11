@@ -9,20 +9,13 @@ import java.util.List;
 @Entity
 public class Luong {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  long id;
+    private  String date;
     @Column(name = "luongcoban")
     private String LuongCoBan;
-    @Column(name = "khoancong")
-    private String KhoanCong;
-    @Column(name = "khoantru")
-    private String KhoanTru;
     @Column(name = "ngaycong")
     private String NgayCong;
     @Column(name = "ghitru")
     private String GhiTru;
-    private  String thang;
-    private  String nam;
 
     @ManyToOne
     @JoinColumn(name="kyluatid")
@@ -53,15 +46,25 @@ public class Luong {
 
     }
 
-    public Luong(long id, String luongCoBan, String khoanCong, String khoanTru, String ngayCong, String ghiTru, String thang, String nam) {
-        this.id = id;
+    public Luong(String date, String luongCoBan, String ngayCong, String ghiTru, KyLuat kyLuat, NhanVien nhanVien, HeSoLuong heSoLuong, KhenThuongKl khenThuongKl, TamUng tamUng, PhuCap phuCap) {
+        this.date = date;
         LuongCoBan = luongCoBan;
-        KhoanCong = khoanCong;
-        KhoanTru = khoanTru;
         NgayCong = ngayCong;
         GhiTru = ghiTru;
-        this.thang = thang;
-        this.nam = nam;
+        this.kyLuat = kyLuat;
+        this.nhanVien = nhanVien;
+        this.heSoLuong = heSoLuong;
+        this.khenThuongKl = khenThuongKl;
+        this.tamUng = tamUng;
+        this.phuCap = phuCap;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public KyLuat getKyLuat() {
@@ -108,14 +111,6 @@ public class Luong {
         this.phuCap = phuCap;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getLuongCoBan() {
         return LuongCoBan;
     }
@@ -124,21 +119,6 @@ public class Luong {
         LuongCoBan = luongCoBan;
     }
 
-    public String getKhoanCong() {
-        return KhoanCong;
-    }
-
-    public void setKhoanCong(String khoanCong) {
-        KhoanCong = khoanCong;
-    }
-
-    public String getKhoanTru() {
-        return KhoanTru;
-    }
-
-    public void setKhoanTru(String khoanTru) {
-        KhoanTru = khoanTru;
-    }
 
     public String getNgayCong() {
         return NgayCong;
@@ -154,22 +134,6 @@ public class Luong {
 
     public void setGhiTru(String ghiTru) {
         GhiTru = ghiTru;
-    }
-
-    public String getThang() {
-        return thang;
-    }
-
-    public void setThang(String thang) {
-        this.thang = thang;
-    }
-
-    public String getNam() {
-        return nam;
-    }
-
-    public void setNam(String nam) {
-        this.nam = nam;
     }
 
 //    public NhanVien getNhanVien() {

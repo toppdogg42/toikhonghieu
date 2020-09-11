@@ -2,17 +2,21 @@ package com.qlns.qlnsitsol.entity;
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.*;
 
 @Entity
+
 @Table(name = "diemdanh")
 public class DiemDanh {
     @Id
+    @Column(name = "date_id")
     private String date;
     private boolean dilam;
     @ManyToOne
-    @JoinColumn(name="nhanvienid")
+    @PrimaryKeyJoinColumn
+    @JoinColumn(name ="nhavienid",referencedColumnName = "id")
     @NotFound(action = NotFoundAction.IGNORE)
     private NhanVien nhanVien;
 
