@@ -1,7 +1,6 @@
 package com.qlns.qlnsitsol.Service;
 
 import com.qlns.qlnsitsol.entity.NhanVien;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -12,7 +11,7 @@ public interface NhanVienService {
     List<NhanVien> list();
     Optional<NhanVien> getOne(long id);
     Optional<NhanVien> getByName(String s);
-    void  save(NhanVien phongBan);
+    void  save(NhanVien nv);
     void delete(long id);
     boolean existsById(long id);
     boolean existsByName(String s);

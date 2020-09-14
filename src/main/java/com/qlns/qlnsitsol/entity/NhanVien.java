@@ -1,7 +1,7 @@
 package com.qlns.qlnsitsol.entity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
-import javax.validation.constraints.NotNull;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -81,6 +81,18 @@ public class NhanVien {
 //    public List<Luong> getLuongs() {
 //        return luongs;
 //    }
+
+    public List<Luong> getLuongs() {
+        return luongs;
+    }
+
+    public List<DiemDanh> getDiemDanh() {
+        return diemDanh;
+    }
+
+    public void setDiemDanh(List<DiemDanh> diemDanh) {
+        this.diemDanh = diemDanh;
+    }
 
     public void setLuongs(List<Luong> luongs) {
         this.luongs = luongs;

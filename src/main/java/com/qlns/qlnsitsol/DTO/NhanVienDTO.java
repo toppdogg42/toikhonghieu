@@ -34,10 +34,10 @@ public class NhanVienDTO {
         this.tenNhanVien = tenNhanVien;
         this.ngaySinh = ngaySinh;
         this.soCmnnd = soCmnnd;
-        SoTienKhenThuong = soTienKhenThuong;
-        KhoanCong = khoanCong;
-        KhoanTru = khoanTru;
-        LuongCoBan = luongCoBan;
+        this.SoTienKhenThuong = soTienKhenThuong;
+        this.KhoanCong = khoanCong;
+        this.KhoanTru = khoanTru;
+        this.LuongCoBan = luongCoBan;
         this.thang = thang;
     }
 
